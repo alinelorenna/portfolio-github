@@ -1,0 +1,220 @@
+/* style.css – ESTILO TOTALMENTE UNIFICADO: HEADER + TODAS AS SEÇÕES (INCLUINDO REDES) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #ffffff;
+    color: #2d3748;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------- HEADER ELEGANTE ---------- */
+header {
+    text-align: center;
+    padding: 3rem 1rem;
+    background: linear-gradient(135deg, #FFFE71 0%, #FFFBE6 100%);
+    border-bottom: 6px solid #FFFF66;
+    margin-bottom: 1.8rem;
+    box-shadow: 0 6px 20px rgba(255, 253, 116, .4);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%);
+    animation: shine 8s infinite;
+    pointer-events: none;
+}
+
+@keyframes shine {
+    0%, 100% { transform: translateX(-50%) translateY(-50%) rotate(0deg); }
+    50% { transform: translateX(50%) translateY(50%) rotate(180deg); }
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #92400e, #f59e0b, #fbbf24);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    margin-bottom: .4rem;
+    letter-spacing: 1.5px;
+    text-shadow: 0 2px 4px rgba(0,0,0,.1);
+    animation: fadeInUp 1s ease-out;
+}
+
+header p {
+    font-size: 1.3rem;
+    color: #7c2d12;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-style: normal;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Main ---------- */
+main {
+    flex: 1;
+    max-width: 900px;
+    margin: 0 auto 2rem;
+    padding: 0 1.5rem;
+}
+
+/* ---------- TODAS AS SEÇÕES (INCLUINDO REDES SOCIAIS) – ESTILO UNIFICADO ---------- */
+section {
+    background: #FFFE71;
+    padding: 1.5rem;
+    border-radius: 14px;
+    border: 1.8px solid #FFFF66;
+    box-shadow: 0 5px 16px rgba(255, 255, 102, .35);
+    margin-bottom: 1.7rem;
+    text-align: center;
+    transition: all .3s ease;
+    animation: fadeInUp 0.8s ease-out both;
+    animation-delay: calc(0.1s * var(--delay, 0));
+}
+
+section:hover {
+    background: #FFFD74;
+    border-color: #d4af37;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(255, 255, 102, .5);
+}
+
+/* Títulos elegantes (Playfair Display) */
+section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #92400e;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+    padding: 0 .6rem;
+    letter-spacing: 1px;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -8px;
+    width: 70px;
+    height: 4px;
+    background: linear-gradient(90deg, #f59e0b, #fbbf24);
+    border-radius: 3px;
+}
+
+/* Parágrafos */
+section p {
+    margin-bottom: .7rem;
+    font-size: 1.06rem;
+    color: #4a5568;
+}
+section p strong {
+    color: #7c2d12;
+    font-weight: 600;
+}
+
+/* ---------- REDES SOCIAIS – AGORA COM O MESMO ESTILO PREMIUM ---------- */
+.redes-sociais .icones {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .8rem;
+    max-width: 540px;
+    margin: 1rem auto 0;
+}
+
+.rede {
+    padding: .6rem .8rem;
+    background: #ffffff;
+    border-radius: 12px;
+    font-size: .96rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .6rem;
+    border: 1.8px solid #FFFF66;
+    transition: all .3s ease;
+    white-space: nowrap;
+    color: #2d3748;
+    box-shadow: 0 3px 8px rgba(255, 255, 102, .2);
+}
+.rede:hover {
+    background:white;
+    border-color: #d4af37;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(255, 255, 102, .5);
+}
+
+.rede::before {
+    font-size: 1.2em;
+}
+
+.rede.instagram { color: #e1306c; }
+.rede.tiktok    { color: #ff0050; }
+.rede.facebook  { color: #1877f2; }
+.rede.twitter   { color: #1da1f2; }
+
+/* ---------- Footer ---------- */
+footer {
+    text-align: center;
+    padding: 1.4rem;
+    background: linear-gradient(135deg, #FFFE71 0%, #FFFBE6 100%);
+    color: #4a5568;
+    font-size: .92rem;
+    border-top: 5px solid #FFFF66;
+    margin-top: auto;
+    box-shadow: 0 -4px 12px rgba(255, 253, 116, .3);
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ---------- ANIMAÇÃO POR SEÇÃO (cascata) ---------- */
+.sobre-mim     { --delay: 1; }
+.educacao      { --delay: 2; }
+.curiosidades  { --delay: 3; }
+.preferencias  { --delay: 4; }
+.trabalho      { --delay: 5; }
+.redes-sociais { --delay: 6; }
+
+/* ---------- Responsividade ---------- */
+@media (max-width: 768px) {
+    header h1 { font-size: 2.6rem; }
+    header p  { font-size: 1.15rem; }
+    header { padding: 2.5rem 1rem; }
+    section h2 { font-size: 1.7rem; }
+    .rede { font-size: .94rem; }
+}
+@media (max-width: 600px) {
+    .redes-sociais .icones { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+    header h1 { font-size: 2.2rem; }
+    main { padding: 0 1rem; }
+    section { padding: 1.3rem; }
+    section h2 { font-size: 1.6rem; }
+}
