@@ -205,10 +205,10 @@ section ul li::before {
 /* ---------- HABILIDADES ---------- */
 .habilidades ul {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* duas colunas fixas */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 0.8rem;
     margin-top: 0.6rem;
-    justify-items: center; /* centraliza os cards */
+    justify-items: center; 
 }
 
 .habilidades ul li {
@@ -221,7 +221,7 @@ section ul li::before {
     color: #7c2d12;
     box-shadow: 0 2px 6px rgba(255, 255, 102, 0.15);
     transition: all 0.3s ease;
-    width: 90%; /* garante que os cards fiquem proporcionais */
+    width: 98%; 
 }
 
 .habilidades ul li:hover {
