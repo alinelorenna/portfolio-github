@@ -1,4 +1,4 @@
-/* style.css – ESTILO TOTALMENTE UNIFICADO: HEADER + TODAS AS SEÇÕES (INCLUINDO REDES) */
+/* style.css – ESTILO TOTALMENTE UNIFICADO: HEADER + TODAS AS SEÇÕES */
 * {
     margin: 0;
     padding: 0;
@@ -25,6 +25,10 @@ header {
     box-shadow: 0 6px 20px rgba(255, 253, 116, .4);
     position: relative;
     overflow: hidden;
+}
+
+.center-dados {
+    text-align: center;
 }
 
 header::before {
@@ -65,7 +69,6 @@ header p {
     font-weight: 500;
     letter-spacing: 1px;
     text-transform: uppercase;
-    font-style: normal;
     animation: fadeInUp 1.2s ease-out;
 }
 
@@ -82,7 +85,7 @@ main {
     padding: 0 1.5rem;
 }
 
-/* ---------- TODAS AS SEÇÕES (INCLUINDO REDES SOCIAIS) – ESTILO UNIFICADO ---------- */
+/* ---------- SEÇÕES COMUNS ---------- */
 section {
     background: #FFFE71;
     padding: 1.5rem;
@@ -90,7 +93,7 @@ section {
     border: 1.8px solid #FFFF66;
     box-shadow: 0 5px 16px rgba(255, 255, 102, .35);
     margin-bottom: 1.7rem;
-    text-align: center;
+    text-align: left;
     transition: all .3s ease;
     animation: fadeInUp 0.8s ease-out both;
     animation-delay: calc(0.1s * var(--delay, 0));
@@ -99,21 +102,21 @@ section {
 section:hover {
     background: #FFFD74;
     border-color: #d4af37;
-    transform: translateY(-5px);
-    box-shadow: 0 12px 28px rgba(255, 255, 102, .5);
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(255, 255, 102, .5);
 }
 
-/* Títulos elegantes (Playfair Display) */
 section h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 1.9rem;
+    font-size: 1.95rem;
     font-weight: 700;
     color: #92400e;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
+    text-align: center;
     position: relative;
     display: inline-block;
-    padding: 0 .6rem;
-    letter-spacing: 1px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 section h2::after {
@@ -121,58 +124,167 @@ section h2::after {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: -8px;
-    width: 70px;
+    bottom: -10px;
+    width: 80px;
     height: 4px;
     background: linear-gradient(90deg, #f59e0b, #fbbf24);
     border-radius: 3px;
 }
 
-/* Parágrafos */
+/* ---------- PARÁGRAFOS E LISTAS ---------- */
 section p {
-    margin-bottom: .7rem;
-    font-size: 1.06rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.0rem;
     color: #4a5568;
 }
+
 section p strong {
     color: #7c2d12;
     font-weight: 600;
 }
 
-/* ---------- REDES SOCIAIS – AGORA COM O MESMO ESTILO PREMIUM ---------- */
+section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+section ul li {
+    position: relative;
+    padding-left: 1.8em;
+    margin-bottom: .9rem;
+    font-size: 1.02rem;
+    color: #2d3748;
+}
+
+section ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #f59e0b;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* ---------- EXPERIÊNCIA PROFISSIONAL ---------- */
+.experiencia .job {
+    background: #ffffff;
+    padding: 1.2rem;
+    border-radius: 12px;
+    margin-bottom: 1.2rem;
+    border: 1.5px solid #FFFF99;
+    box-shadow: 0 3px 10px rgba(255, 255, 102, .2);
+}
+
+.experiencia .job h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.15rem;
+    color: #7c2d12;
+    margin-bottom: .3rem;
+    font-weight: 600;
+}
+
+.experiencia .job .periodo {
+    font-size: .88rem;
+    color: #92400e;
+    font-weight: 500;
+    background: #FFFBE6;
+    padding: 2px 8px;
+    border-radius: 6px;
+    display: inline-block;
+    margin-bottom: .6rem;
+}
+
+.experiencia .job em {
+    font-size: .94rem;
+    color: #6b7280;
+    display: block;
+    margin-bottom: .6rem;
+    font-style: italic;
+}
+
+/* ---------- HABILIDADES ---------- */
+.habilidades ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* duas colunas fixas */
+    gap: 0.8rem;
+    margin-top: 0.6rem;
+    justify-items: center; /* centraliza os cards */
+}
+
+.habilidades ul li {
+    background: #ffffff;
+    padding: 0.7rem 1rem;
+    border-radius: 10px;
+    border: 1.5px solid #FFFF99;
+    text-align: center;
+    font-weight: 500;
+    color: #7c2d12;
+    box-shadow: 0 2px 6px rgba(255, 255, 102, 0.15);
+    transition: all 0.3s ease;
+    width: 90%; /* garante que os cards fiquem proporcionais */
+}
+
+.habilidades ul li:hover {
+    background: #FFFBE6;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(255, 255, 102, 0.3);
+}
+
+/* Responsividade: em telas pequenas, fica 1 card por linha */
+@media (max-width: 600px) {
+    .habilidades ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ---------- PROJETOS ---------- */
+.projetos ul li {
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    border: 1.5px solid #FFFF99;
+    box-shadow: 0 3px 10px rgba(255, 255, 102, .2);
+}
+
+.projetos ul li strong {
+    color: #92400e;
+    display: block;
+    margin-bottom: .4rem;
+    font-size: 1.1rem;
+}
+
+/* ---------- REDES SOCIAIS ---------- */
 .redes-sociais .icones {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: .8rem;
-    max-width: 540px;
-    margin: 1rem auto 0;
+    gap: .9rem;
+    max-width: 560px;
+    margin: 1.2rem auto 0;
 }
 
 .rede {
-    padding: .6rem .8rem;
+    padding: .7rem 1rem;
     background: #ffffff;
-    border-radius: 12px;
-    font-size: .96rem;
+    border-radius: 14px;
+    font-size: 1rem;
     font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: .6rem;
-    border: 1.8px solid #FFFF66;
+    gap: .7rem;
+    border: 2px solid #FFFF66;
     transition: all .3s ease;
-    white-space: nowrap;
     color: #2d3748;
     box-shadow: 0 3px 8px rgba(255, 255, 102, .2);
 }
-.rede:hover {
-    background:white;
-    border-color: #d4af37;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 14px rgba(255, 255, 102, .5);
-}
 
-.rede::before {
-    font-size: 1.2em;
+.rede:hover {
+    background: #FFFBE6;
+    border-color: #d4af37;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(255, 255, 102, .4);
 }
 
 .rede.instagram { color: #e1306c; }
@@ -183,38 +295,41 @@ section p strong {
 /* ---------- Footer ---------- */
 footer {
     text-align: center;
-    padding: 1.4rem;
+    padding: 1.5rem;
     background: linear-gradient(135deg, #FFFE71 0%, #FFFBE6 100%);
     color: #4a5568;
-    font-size: .92rem;
+    font-size: .94rem;
     border-top: 5px solid #FFFF66;
     margin-top: auto;
     box-shadow: 0 -4px 12px rgba(255, 253, 116, .3);
-    font-family: 'Montserrat', sans-serif;
 }
 
-/* ---------- ANIMAÇÃO POR SEÇÃO (cascata) ---------- */
+/* ---------- ANIMAÇÃO POR SEÇÃO (CASCATA) ---------- */
 .sobre-mim     { --delay: 1; }
 .educacao      { --delay: 2; }
-.curiosidades  { --delay: 3; }
-.preferencias  { --delay: 4; }
-.trabalho      { --delay: 5; }
-.redes-sociais { --delay: 6; }
+.experiencia   { --delay: 3; }
+.habilidades   { --delay: 4; }
+.projetos      { --delay: 5; }
+.curiosidades  { --delay: 6; }
+.redes-sociais { --delay: 7; }
 
 /* ---------- Responsividade ---------- */
 @media (max-width: 768px) {
     header h1 { font-size: 2.6rem; }
     header p  { font-size: 1.15rem; }
     header { padding: 2.5rem 1rem; }
-    section h2 { font-size: 1.7rem; }
-    .rede { font-size: .94rem; }
+    section h2 { font-size: 1.75rem; }
+    .habilidades ul { grid-template-columns: 1fr; }
 }
+
 @media (max-width: 600px) {
     .redes-sociais .icones { grid-template-columns: 1fr; }
+    .experiencia .job { padding: 1rem; }
 }
+
 @media (max-width: 480px) {
     header h1 { font-size: 2.2rem; }
     main { padding: 0 1rem; }
-    section { padding: 1.3rem; }
-    section h2 { font-size: 1.6rem; }
+    section { padding: 1.4rem; }
+    section h2 { font-size: 1.65rem; }
 }
